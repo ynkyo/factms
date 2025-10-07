@@ -1,4 +1,12 @@
+'use client'
+
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+
 export default function About() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.2 })
+
   const features = [
     {
       title: '地域密着',
@@ -30,37 +38,116 @@ export default function About() {
     },
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  }
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
+  }
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
+  }
+
   return (
-    <section className="py-16 lg:py-24 bg-gray-50">
+    <section ref={ref} className="py-16 lg:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            FACT（事実）を大切に、誠実な家づくりを
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <motion.div
+          className="text-center mb-12"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={titleVariants}
+        >
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.6 }}
+          >
+            FACT(事実)を大切に、誠実な家づくりを
+          </motion.h2>
+          <motion.p
+            className="text-lg text-gray-600 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             私たちFACTM&apos;sは、その名の通り「事実」を何より大切にしています。
             建築のプロとして正確な情報をお伝えし、お客様に寄り添った誠実な仕事を心がけています。
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-12">
+        <motion.div
+          className="grid md:grid-cols-3 gap-8 mt-12"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           {features.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+              variants={cardVariants}
+              whileHover={{
+                y: -8,
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow"
             >
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+              <motion.div
+                className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4"
+                whileHover={{
+                  rotate: [0, -10, 10, -10, 0],
+                  scale: 1.1
+                }}
+                transition={{ duration: 0.5 }}
+              >
                 {feature.icon}
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              </motion.div>
+              <motion.h3
+                className="text-xl font-bold text-gray-900 mb-2"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ delay: 0.3 + index * 0.1 }}
+              >
                 {feature.title}
-              </h3>
-              <p className="text-gray-600">
+              </motion.h3>
+              <motion.p
+                className="text-gray-600"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ delay: 0.4 + index * 0.1 }}
+              >
                 {feature.description}
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
