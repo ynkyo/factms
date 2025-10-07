@@ -75,7 +75,7 @@ export default function About() {
   }
 
   return (
-    <section ref={ref} className="py-16 lg:py-24 bg-gray-50">
+    <section ref={ref} className="py-16 lg:py-24 bg-dark-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -84,7 +84,7 @@ export default function About() {
           variants={titleVariants}
         >
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl font-normal text-gray-100 mb-4 tracking-wide"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.6 }}
@@ -92,7 +92,7 @@ export default function About() {
             FACT(事実)を大切に、誠実な家づくりを
           </motion.h2>
           <motion.p
-            className="text-lg text-gray-600 max-w-3xl mx-auto"
+            className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -117,10 +117,10 @@ export default function About() {
                 scale: 1.02,
                 transition: { duration: 0.3 }
               }}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow"
+              className="bg-dark-800/50 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow border border-primary-900/30"
             >
               <motion.div
-                className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4"
+                className="w-12 h-12 bg-primary-900/50 rounded-lg flex items-center justify-center text-primary-400 mb-4"
                 whileHover={{
                   rotate: [0, -10, 10, -10, 0],
                   scale: 1.1
@@ -130,7 +130,7 @@ export default function About() {
                 {feature.icon}
               </motion.div>
               <motion.h3
-                className="text-xl font-bold text-gray-900 mb-2"
+                className="text-xl font-medium text-gray-100 mb-2"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
@@ -138,7 +138,7 @@ export default function About() {
                 {feature.title}
               </motion.h3>
               <motion.p
-                className="text-gray-600"
+                className="text-gray-300 leading-relaxed"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ delay: 0.4 + index * 0.1 }}

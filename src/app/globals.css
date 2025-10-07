@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply text-gray-900;
+    @apply bg-dark-950 text-gray-100 font-serif;
   }
 
   /* カスタムスクロールバー */
@@ -17,16 +17,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #2d2d2d;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #3b82f6;
+    background: #a68a5c;
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #2563eb;
+    background: #bfa67d;
   }
 }
 

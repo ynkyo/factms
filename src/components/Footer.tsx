@@ -17,18 +17,18 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-gray-900">
+    <footer className="bg-black border-t border-primary-900/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-12 lg:py-16">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="lg:col-span-2">
               <div className="mb-6">
-                <span className="text-2xl font-bold text-white">
+                <span className="text-2xl font-normal text-primary-400 tracking-wider">
                   FACTM&apos;s
                 </span>
-                <span className="text-sm text-gray-300 ml-2">ファクトムズ</span>
+                <span className="text-sm text-gray-400 ml-2 font-light">ファクトムズ</span>
               </div>
-              <p className="text-gray-300 mb-6 max-w-md">
+              <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
                 確かな技術で、理想の住まいを。
                 株式会社FACTM&apos;sは、札幌市南区を拠点に新築・リフォーム・リノベーションを手がける工務店です。
                 地域に根ざし、お客様に寄り添った住まいづくりを行っています。
@@ -50,7 +50,7 @@ export default function Footer() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-gray-400 hover:text-primary-400 transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -74,14 +74,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 py-6">
+        <div className="border-t border-primary-900/30 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex space-x-6 mb-4 md:mb-0">
               {navigation.legal.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className="text-gray-400 hover:text-primary-400 text-sm transition-colors"
                 >
                   {item.name}
                 </Link>

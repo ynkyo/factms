@@ -45,14 +45,14 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative bg-gradient-to-br from-primary-50 to-white py-20 lg:py-32 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-dark-900 via-dark-950 to-black py-20 lg:py-32 overflow-hidden">
       {/* パララックス背景要素 */}
       <motion.div
-        className="absolute top-20 right-10 w-72 h-72 bg-primary-200/30 rounded-full blur-3xl"
+        className="absolute top-20 right-10 w-72 h-72 bg-primary-700/20 rounded-full blur-3xl"
         style={{ transform: `translateY(${offsetY * 0.3}px)` }}
       />
       <motion.div
-        className="absolute bottom-20 left-10 w-96 h-96 bg-primary-100/20 rounded-full blur-3xl"
+        className="absolute bottom-20 left-10 w-96 h-96 bg-accent-700/10 rounded-full blur-3xl"
         style={{ transform: `translateY(${offsetY * 0.2}px)` }}
       />
 
@@ -65,12 +65,12 @@ export default function Hero() {
           >
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-100 mb-6 leading-tight tracking-tight"
             >
               理想の住まいを、
               <br />
               <motion.span
-                className="text-primary-600 inline-block"
+                className="text-primary-400 inline-block font-normal"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
@@ -81,7 +81,7 @@ export default function Hero() {
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl text-gray-600 mb-8"
+              className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
             >
               札幌市南区を拠点に、新築・リフォーム・リノベーションまで
               お客様の「こうしたい」を実現する工務店です。
@@ -96,7 +96,7 @@ export default function Hero() {
               >
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-md text-dark-950 bg-primary-500 hover:bg-primary-400 transition-colors shadow-lg hover:shadow-xl"
                 >
                   まずは無料相談から
                   <motion.svg
@@ -122,7 +122,7 @@ export default function Hero() {
               >
                 <Link
                   href="/projects"
-                  className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-md text-primary-600 bg-white border-2 border-primary-600 hover:bg-primary-50 transition-colors shadow-md hover:shadow-lg"
+                  className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-md text-primary-400 bg-transparent border-2 border-primary-500 hover:bg-primary-950 transition-colors shadow-md hover:shadow-lg"
                 >
                   施工事例を見る
                 </Link>
@@ -137,7 +137,7 @@ export default function Hero() {
             style={{ perspective: 1000 }}
           >
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-primary-200/20 to-primary-600/20 rounded-2xl"
+              className="absolute inset-0 bg-gradient-to-br from-primary-700/30 to-accent-700/20 rounded-2xl"
               animate={{
                 scale: [1, 1.02, 1],
               }}
@@ -148,7 +148,7 @@ export default function Hero() {
               }}
             />
             <motion.div
-              className="relative h-full rounded-2xl overflow-hidden shadow-2xl"
+              className="relative h-full rounded-2xl overflow-hidden shadow-2xl ring-1 ring-primary-500/20"
               whileHover={{ scale: 1.02, rotateY: 2 }}
               transition={{ duration: 0.4 }}
             >

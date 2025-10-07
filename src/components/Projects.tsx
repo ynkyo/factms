@@ -85,7 +85,7 @@ export default function Projects() {
   }
 
   return (
-    <section ref={ref} className="py-16 lg:py-24 bg-gray-50">
+    <section ref={ref} className="py-16 lg:py-24 bg-dark-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -94,7 +94,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl font-normal text-gray-100 mb-4 tracking-wide"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.7 }}
@@ -102,7 +102,7 @@ export default function Projects() {
             実績が語る、確かな技術力
           </motion.h2>
           <motion.p
-            className="text-lg text-gray-600"
+            className="text-lg text-gray-300 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -135,7 +135,7 @@ export default function Projects() {
           >
             <Link
               href="/projects"
-              className="inline-flex items-center px-6 py-3 border-2 border-primary-600 text-base font-medium rounded-md text-primary-600 bg-white hover:bg-primary-50 transition-colors shadow-md hover:shadow-lg"
+              className="inline-flex items-center px-6 py-3 border-2 border-primary-500 text-base font-medium rounded-md text-primary-400 bg-transparent hover:bg-primary-950 transition-colors shadow-md hover:shadow-lg"
             >
               すべての施工事例を見る
               <svg
@@ -203,7 +203,7 @@ function ProjectCard({ project, index, variants }: { project: any; index: number
     >
       <Link
         href={`/projects/${project.id}`}
-        className="group block bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-shadow"
+        className="group block bg-dark-800/50 backdrop-blur-sm rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-shadow border border-primary-900/30 hover:border-primary-700/50"
       >
         <motion.div
           className="relative h-64 overflow-hidden"
@@ -244,12 +244,12 @@ function ProjectCard({ project, index, variants }: { project: any; index: number
         <motion.div
           className="p-6"
           animate={{
-            backgroundColor: isHovered ? 'rgb(249, 250, 251)' : 'rgb(255, 255, 255)',
+            backgroundColor: isHovered ? 'rgba(45, 45, 45, 0.5)' : 'rgba(45, 45, 45, 0.3)',
           }}
           transition={{ duration: 0.3 }}
         >
           <motion.h3
-            className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors"
+            className="text-xl font-medium text-gray-100 mb-2 group-hover:text-primary-400 transition-colors"
             animate={{
               x: isHovered ? 5 : 0,
             }}
@@ -257,10 +257,10 @@ function ProjectCard({ project, index, variants }: { project: any; index: number
           >
             {project.title}
           </motion.h3>
-          <p className="text-gray-600 mb-3">
+          <p className="text-gray-300 mb-3 leading-relaxed">
             {project.description}
           </p>
-          <div className="flex items-center text-sm text-gray-500">
+          <div className="flex items-center text-sm text-gray-400">
             <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
             </svg>

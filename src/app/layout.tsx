@@ -1,8 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Noto_Serif_JP } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const notoSerifJP = Noto_Serif_JP({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-noto-serif-jp',
+})
 
 export const metadata: Metadata = {
   title: '株式会社FACTM\'s（ファクトムズ）| 札幌市南区の工務店',
@@ -22,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={inter.className}>{children}</body>
+      <body className={notoSerifJP.className}>{children}</body>
     </html>
   )
 }
