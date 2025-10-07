@@ -61,7 +61,7 @@ export default function Services() {
   }
 
   return (
-    <section ref={ref} className="py-16 lg:py-24 bg-white">
+    <section ref={ref} className="py-16 lg:py-24 bg-dark-950">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -70,7 +70,7 @@ export default function Services() {
           transition={{ duration: 0.6 }}
         >
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-4xl font-normal text-gray-100 mb-4 tracking-wide"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.7 }}
@@ -78,7 +78,7 @@ export default function Services() {
             サービス内容
           </motion.h2>
           <motion.p
-            className="text-lg text-gray-600"
+            className="text-lg text-gray-300 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -101,7 +101,7 @@ export default function Services() {
             >
               <Link
                 href={service.href}
-                className="group block bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
+                className="group block bg-dark-800/50 backdrop-blur-sm border border-primary-900/30 rounded-lg overflow-hidden hover:shadow-2xl hover:border-primary-700/50 transition-all duration-300"
               >
                 <motion.div
                   className="relative h-48 overflow-hidden"
@@ -127,21 +127,21 @@ export default function Services() {
                 </motion.div>
                 <motion.div
                   className="p-6"
-                  whileHover={{ backgroundColor: "rgb(249, 250, 251)" }}
+                  whileHover={{ backgroundColor: "rgba(45, 45, 45, 0.5)" }}
                   transition={{ duration: 0.3 }}
                 >
                   <motion.h3
-                    className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors"
+                    className="text-xl font-medium text-gray-100 mb-2 group-hover:text-primary-400 transition-colors"
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.3 }}
                   >
                     {service.title}
                   </motion.h3>
-                  <p className="text-sm text-gray-600 line-clamp-3">
+                  <p className="text-sm text-gray-300 line-clamp-3 leading-relaxed">
                     {service.description}
                   </p>
                   <motion.div
-                    className="mt-4 flex items-center text-primary-600 font-medium"
+                    className="mt-4 flex items-center text-primary-400 font-medium"
                     initial={{ x: 0 }}
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.3 }}

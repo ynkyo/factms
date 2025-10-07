@@ -5,7 +5,8 @@
       "Bash(git add:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\nAdd dynamic animations and beautiful motion effects to website\n\n- Install framer-motion library for advanced animations\n- Create custom hooks for scroll detection and parallax effects\n- Add Hero section animations: fade-in, parallax backgrounds, 3D image rotation\n- Add About section animations: scroll-triggered fade-in, stagger effects, hover interactions\n- Add Services section animations: stagger animations, image zoom/rotate on hover\n- Add Projects section animations: mouse-tracking 3D tilt effect, smooth spring animations\n- Enhance global CSS: custom scrollbar, keyframe animations, GPU acceleration\n- Implement performance-optimized animations using transform and opacity\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git push:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []
